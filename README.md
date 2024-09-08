@@ -1,38 +1,42 @@
-# Keylogger-simple
-Este projeto é uma implementação básica de um keylogger, criado para fins educacionais. Ele demonstra como capturar eventos de teclas digitadas, cliques de mouse e capturas de tela em um sistema.
+<h1>Keylogger-simple</h1>
 
-Para começarmos a falar sobre o nosso keylogger, primeiro vamos abordar as bibliotecas necessárias para faze-lo rodar com perfeição. Dito isto, abaixo está listado as bibliotecas e o que elas fazem:
+<p>Este projeto é uma implementação básica de um keylogger, criado para <strong>fins educacionais</strong>. Ele demonstra como capturar eventos de teclas digitadas, cliques do mouse e capturas de tela em um sistema.</p>
 
-Teclado e mouse:
+<h2>Bibliotecas Necessárias</h2>
 
-- pynput: Está biblioteca é capaz de Ouvir(Listener), Controlar(Controller) e Automatizar processos no seu mouse e no seu teclado. Como estamos fazendo um keylogger usaremos a função de Listener que nos ajuda a ouvir e registrar o que está sendo digitado (Usamos a função Key também para testes e fazer o programa parar). Com essa biblioteca, estamos caputando quando o nosso alvo pressionar e quando ele soltar a tecla. Também estamos registrando quando o nosso alvo pressioan/solta, coordenadas da tela de onde ele clicou e o botão que foi pressionado (Esquerdo ou Direito).
+<p>Para começarmos a falar sobre o nosso keylogger, vamos abordar as bibliotecas necessárias para fazê-lo rodar corretamente. Abaixo estão listadas as bibliotecas e suas funções:</p>
 
-No caso do mouse, podemos capturar também a movimentação e a rolagem como podemos vê no código, porém isso consumiria mais memória e acarretaria em lentidão e nosso alvo iria descobrir que tem algo de errado.
+<h3>Instalação rápida</h3>
+<p>Para instalar todas as bibliotecas de uma vez, use o seguinte comando:</p>
 
-- os: Uma biblioteca bem famosa para modificação de arquivo. Com ela nós usamos arte manhã para salvarmos os arquivos.txt em arquivos ocultos para ficar mais difícil de achar. Lembrando que nos código de Teclado e mouse só está para deixar oculto caso seja Windows, se sua máquina for linux os arquivos não ficaram ocultos.
+<pre><code>pip install pynput mss pyzipper</code></pre>
 
-Print Tela:
+<h3>Teclado e Mouse</h3>
 
-- mss/mss.tools: Esse biblioteca nos permite tirar print da nossa tela e salvalas. Sozinha não faz muita coisa, porém juntamente com as demais, vira uma boa ferramenta. A mss.tools nos permite ter mais liberdade com a nossa imagem, permitindo salvar de diferentes maneiras e de diferentes domínios.
+<ul>
+  <li><strong>pynput</strong>: Esta biblioteca é capaz de ouvir (Listener), controlar (Controller) e automatizar processos no mouse e no teclado. Como estamos criando um keylogger, usaremos a função <code>Listener</code>, que nos ajuda a capturar e registrar o que está sendo digitado. Além disso, usamos a função <code>Key</code> para definir testes e parar o programa. Com essa biblioteca, capturamos quando o alvo pressiona ou solta uma tecla, assim como registramos coordenadas de cliques de mouse e qual botão (esquerdo ou direito) foi pressionado. Também é possível capturar o movimento e a rolagem do mouse, mas isso consome mais memória, podendo causar lentidão e alertar o alvo.</li>
+  <li><strong>os</strong>: Usamos essa biblioteca para manipulação de arquivos, como salvar logs em arquivos ocultos no Windows. No Linux, os arquivos não serão ocultos automaticamente.</li>
+</ul>
 
-- os: Nós também usamos para deixar oculto, porém dessa vez nós também utilizamos para criar uma pasta e salvar todas as imagens nessa pasta, assim fica não só mais difícil de encontrar como fica mais organizado.
-  
-- subprocess: Estamos usando o subprocess aqui para usamos o que já tinhamos feito de salvar como oculto e fazer a mesma coisa com nossa pasta.
+<h3>Captura de Tela</h3>
 
-- platform: Esse aqui é muito importante e essencial para que seu programa funcione em diferentes sistemas operacionais. Com ele analisamos qual o sistema operacional da vítima e com isso, designamos uma alternativa para de colocar a pasta em modo oculto, já que em diferentes sistemas, temos diferentes soluções.
+<ul>
+  <li><strong>mss/mss.tools</strong>: Esta biblioteca permite capturar prints da tela e salvá-los. A <code>mss.tools</code> oferece mais flexibilidade, como salvar em diferentes formatos e locais.</li>
+  <li><strong>os</strong>: Também usada para criar uma pasta oculta onde as capturas de tela serão armazenadas, tornando-as mais difíceis de serem encontradas e mantendo o projeto organizado.</li>
+  <li><strong>subprocess</strong>: Utilizado para ocultar a pasta criada para armazenar as imagens.</li>
+  <li><strong>platform</strong>: Essa biblioteca é essencial para que o programa funcione em diferentes sistemas operacionais. Ela identifica o SO da vítima e aplica soluções específicas para ocultar arquivos.</li>
+  <li><strong>time</strong>: Usamos o <code>time.sleep</code> para definir um intervalo de 30 segundos entre cada captura de tela.</li>
+  <li><strong>datetime</strong>: Permite salvar as imagens com nomes únicos, no formato <code>Dia.Mês.Ano_Hora_Minuto_Segundo</code>, evitando que sejam sobrescritas.</li>
+</ul>
 
-- time: Essa biblioteca é usada para manuseio do tempo, com ela podemos ter total controle do tempo a nosso favor, com isso, usamos o time para dar um intervalo de 30 segundos de um print a outro.
+<h3>Compactação com Senha</h3>
 
-- datetime import datetime: Essa biblioteca nos permite que possamos salvar cada imagem com (Dia.Mês.Ano_Hora_Minuto_Segundo) para que as imagens não sejam subscrevidas uma em cima da outra.
+<ul>
+  <li><strong>pyzipper</strong>: Usada para criar pastas zipadas protegidas por senha. Além disso, podemos manipular arquivos dentro do ZIP, como a biblioteca <code>os</code> faz para diretórios normais. Isso garante que o arquivo zip seja atualizado constantemente e permaneça oculto.</li>
+  <li><strong>os</strong>: Usada para apagar e recriar a pasta zipada, garantindo que os arquivos sejam sempre novos e difíceis de detectar.</li>
+  <li><strong>platform</strong>: Para verificar se o sistema é Windows ou Linux.</li>
+  <li><strong>time</strong>: Utilizado para definir tempos de espera.</li>
+</ul>
 
-Arquivo RAR com senha
-
-- pyzipper: Com o nome, podemos imaginar para que serve já está biblioteca e sim, com ela nós criamos a nossa pasta zip com alguma senha que nós mesmos escolhemos. Não só isso, mas nós também podemos manusear os arquivos dentro dela como se fosse a biblioteca "os" porém para arquivos zip. Com isso, além de colocarmos a senha, nós também vamos colocar os arquivos/pastas que criarmos dentro desse zip.
-
-- os: Dessa vez, usamos para sempre apagar e criar uma nova pasta zipada, assim sempre teremos coisas novas e nosso alvo nunca irá descobrir tudo que temos, nós também usamos para mandar os arquivos para o zip e deixar-mos o zip oculto.
-
-- platform: Com a mesma finalidade de veriricar se é Windows ou Linux
-
-- time: Tempo de espera
-
-Envio de Email
+<h3>Envio de E-mails</h3>
+<p>(Em construção)</p>
