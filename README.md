@@ -9,7 +9,11 @@
 <h3>Instalação rápida</h3>
 <p>Para instalar todas as bibliotecas de uma vez, use o seguinte comando:</p>
 
-<pre><code>pip install pynput mss pyzipper</code></pre>
+Essênciais:
+<pre><code>pip install pynput mss pyzipper mss.tools</code></pre>
+
+Por via das dúvidas:
+<pre><code>pip install platform time datetime os subprocess</code></pre>
 
 <h3>Teclado e Mouse</h3>
 
