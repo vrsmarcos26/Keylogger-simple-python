@@ -24,4 +24,4 @@ with mss.mss() as sct:
             nome_arquivo = os.path.join(dir, f'monitor_{i}_{timestamp}.png') #Usamos o os.path.join para salvar na nossa pasta
             mss.tools.to_png(screenshot.rgb, screenshot.size, output=nome_arquivo)
     
-        time.sleep(30)
+        time.sleep(60)

