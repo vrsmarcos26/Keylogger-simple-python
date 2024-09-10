@@ -14,10 +14,12 @@ def adicionar_pasta_ao_zip(zf, pasta, caminho_relativo=""):
             zf.write(caminho_completo, caminho_relativo_completo)
 
 while True:
+    time.sleep(61)
+
     arquvio_zip = "Secret.zip"
 
     if os.path.exists(arquvio_zip):
-            os.remove(arquvio_zip)
+        os.remove(arquvio_zip)
 
     with pyzipper.AESZipFile(arquvio_zip, "w", compression=pyzipper.ZIP_DEFLATED, encryption=pyzipper.WZ_AES) as zf:
         zf.setpassword(b'12345')
@@ -32,4 +34,4 @@ while True:
         arquivo_oculto = f".{arquvio_zip}"
         os.rename("Secret.zip", ".Secret.zip")
     
-    time.sleep(60)
+    

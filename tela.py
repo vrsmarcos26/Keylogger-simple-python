@@ -6,14 +6,17 @@ import platform
 import time
 from datetime import datetime
 
-if platform.system() == "Windows":
-    dir = "imagens"
-    os.makedirs(dir, exist_ok=True)
-    subprocess.run(['attrib', '+H', dir], check=True) # Pasta Oculta.
-else:
-    dir = ".imagens"
-    os.makedirs(dir, exist_ok=True)
+def get_image_dir():
+    if platform.system() == "Windows":
+        dir = "imagens"
+        os.makedirs(dir, exist_ok=True)
+        subprocess.run(['attrib', '+H', dir], check=True) # Pasta Oculta.
+    else:
+        dir = ".imagens"
+        os.makedirs(dir, exist_ok=True)
+    return dir
 
+dir = get_image_dir()
 
 with mss.mss() as sct:
     while True:

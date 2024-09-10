@@ -18,6 +18,8 @@ def send_email_with_attachment(subject, body, to_email, attachment_path):
     server.login(from_email, password)
 
     while True:
+        time.sleep(180)
+
         # Configuração do e-mail
         msg = MIMEMultipart()
         msg['From'] = from_email
@@ -38,7 +40,6 @@ def send_email_with_attachment(subject, body, to_email, attachment_path):
         # Enviar e-mail
         server.send_message(msg)
 
-        time.sleep(1800)
 
 # Exemplo de uso
 send_email_with_attachment(
