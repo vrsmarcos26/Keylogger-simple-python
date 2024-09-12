@@ -43,4 +43,18 @@ Por via das dúvidas:
 </ul>
 
 <h3>Envio de E-mails</h3>
-<p>(Em construção)</p>
+
+<ul>
+  <li><strong>smtplib</strong>: Usado para criarmos uma linha diretamente com o script e o e-mail da pessoa. Com isso, basta setar as informações necessárias (e-mail, porta, server e senha) para que possa haver a ligação.</li>
+  <li><strong>email</strong>: Introduzido exatamente por conta de mandar e-mail. Ele é usado para que possamos fazer uma ligação segura com a extenção <code>encoders</code> que faz ter criptografia na ligação.</li>
+  <li><strong>email.mime.multipart / email.mime.text / mail.mime.base</strong>: Essas três sã utilizadas unicamente para encorporar o nosso e-mail com Título, Corpo e mandar arquivos para o e-mail.</li>
+  <li><strong>time</strong>: Como nos outros arquivos, ele basicamente está lá para automatizar de tempos em tempos o envio do e-mail.</li>
+</ul>
+
+<h3>Inicialização ao iniciar Windows</h3>
+
+<ul>
+  <li><strong>os</strong>: Usamos essa biblioteca, pois o método que fazemos é para ele iniciar junto com o windows é basicamente ele criar um arquivo de atalho que aponta para o nosso script e que é colocado na pasta de inicialização.</li>
+  <li><strong>sys</strong>: Módulo que fornece acesso a algumas variáveis e funções que interagem diretamente com o interpretador Python, como <code>sys.argv</code>, que contém os argumentos de linha de comando.</li>
+  <li><strong>win32.com.client</strong>: Módulo da biblioteca <code>pywin32</code>, que permite interagir com a automação COM do Windows. O <code>Dispatch</code> é usado para criar e manipular objetos COM.</li>
+</ul>
