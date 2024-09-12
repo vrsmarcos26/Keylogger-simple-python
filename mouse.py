@@ -5,11 +5,21 @@ import platform
 def get_mouse_file():
     if platform.system() == "Windows":
         arq2 = "mouse.txt"
-        open(arq2, "w")
-        os.system(f"attrib +h {arq2}")
+
+        if not os.path.exists(arq2):
+            open(arq2, "w")
+            os.system(f"attrib +h {arq2}")
+        else:
+            os.remove(arq2) #Para resetar as informações toda vez que o computador for ligado e desligado
+            open(arq2, "w")
+            os.system(f"attrib +h {arq2}")
     else:
         arq2 = ".mouse.txt"
-        open(arq2, "w")
+        if not os.path.exists(arq2):
+            open(arq2, "w").close()
+        else:
+            os.remove(arq2) #Para resetar as informações toda vez que o computador for ligado e desligado
+            open(arq2, "w").close()
     return arq2
 
 arq2 = get_mouse_file()

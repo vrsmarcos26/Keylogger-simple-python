@@ -12,6 +12,7 @@ def send_email_with_attachment(subject, body, to_email, attachment_path):
     from_email = 'vrsmarcos26@gmail.com'
     password = 'fyom utcr lzmd udqe'  # Use a senha de aplicativo criada
 
+    
     # Configuração do servidor SMTP
     server = smtplib.SMTP(smtp_server, smtp_port)
     server.starttls()
@@ -46,5 +47,5 @@ send_email_with_attachment(
     'Teste002',
     'Enviando teste002.',
     'vrsmarcos21@gmail.com',
-    'Secret.zip'
+    'winrar-x64-701br.zip'
 )

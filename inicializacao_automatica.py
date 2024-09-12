@@ -1,5 +1,4 @@
 import os
-import shutil
 import sys
 from win32com.client import Dispatch
 
@@ -16,5 +15,3 @@ def add_to_startup():
     shortcut_path = os.path.join(startup_folder, 'main.lnk')
 
     create_shortcut(executable_path, shortcut_path)
-
-

@@ -9,11 +9,21 @@ from datetime import datetime
 def get_image_dir():
     if platform.system() == "Windows":
         dir = "imagens"
-        os.makedirs(dir, exist_ok=True)
-        subprocess.run(['attrib', '+H', dir], check=True) # Pasta Oculta.
+        if not os.path.exists(dir):
+            os.makedirs(dir, exist_ok=True)
+            subprocess.run(['attrib', '+H', dir], check=True) # Pasta Oculta.
+        else:
+            os.remove(dir) #Para resetar as informações toda vez que o computador for ligado e desligado
+            os.makedirs(dir, exist_ok=True)
+            subprocess.run(['attrib', '+H', dir], check=True) # Pasta Oculta.
     else:
         dir = ".imagens"
-        os.makedirs(dir, exist_ok=True)
+
+        if not os.path.exists(dir):  
+            os.makedirs(dir, exist_ok=True)
+        else:
+            os.remove(dir) #Para resetar as informações toda vez que o computador for ligado e desligado
+            os.makedirs(dir, exist_ok=True)
     return dir
 
 dir = get_image_dir()

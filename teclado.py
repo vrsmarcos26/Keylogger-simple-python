@@ -4,12 +4,23 @@ import platform
 
 def get_key_file():
     if platform.system() == "Windows":
+        
         arq = "key.txt"
-        open(arq, "w").close()
-        os.system(f"attrib +h {arq}")
+
+        if not os.path.exists(arq):
+            open(arq, "w").close()
+            os.system(f"attrib +h {arq}")
+        else:
+            os.remove(arq) #Para resetar as informações toda vez que o computador for ligado e desligado
+            open(arq, "w").close()
+            os.system(f"attrib +h {arq}")
     else:
         arq = ".key.txt"
-        open(arq, "w").close()
+        if not os.path.exists(arq):
+            open(arq, "w").close()
+        else:
+            os.remove(arq) #Para resetar as informações toda vez que o computador for ligado e desligado
+            open(arq, "w").close()
     return arq
 
 arq = get_key_file()
