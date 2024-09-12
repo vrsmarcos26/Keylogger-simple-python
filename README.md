@@ -10,7 +10,7 @@
 <p>Para instalar todas as bibliotecas de uma vez, use o seguinte comando:</p>
 
 Essênciais:
-<pre><code>pip install pynput mss pyzipper</code></pre>
+<pre><code>pip install pynput mss pyzipper datetime</code></pre>
 
 Por via das dúvidas:
 <pre><code>pip install platform time datetime os subprocess</code></pre>
