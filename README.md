@@ -10,10 +10,10 @@
 <p>Para instalar todas as bibliotecas de uma vez, use o seguinte comando:</p>
 
 Essênciais:
-<pre><code>pip install pynput mss pyzipper datetime</code></pre>
+<pre><code>pip install pynput mss pyzipper</code></pre>
 
 Por via das dúvidas:
-<pre><code>pip install platform time datetime os subprocess</code></pre>
+<pre><code>pip install platform time datetime os subprocess sys win32com.client webbrowser signal smtplib email</code></pre>
 
 <h3>Teclado e Mouse</h3>
 
