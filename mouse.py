@@ -3,6 +3,9 @@ from pynput.mouse import Listener
 import platform
 
 def get_mouse_file():
+
+    os.path.join(os.getenv('APPDATA'), 'Microsoft')
+
     if platform.system() == "Windows":
         arq2 = "mouse.txt"
 

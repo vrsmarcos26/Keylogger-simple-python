@@ -7,6 +7,9 @@ import time
 from datetime import datetime
 
 def get_image_dir():
+
+    os.path.join("Documentos")
+
     if platform.system() == "Windows":
         dir = "imagens"
         if not os.path.exists(dir):

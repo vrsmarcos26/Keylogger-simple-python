@@ -15,3 +15,9 @@ def add_to_startup():
     shortcut_path = os.path.join(startup_folder, 'main.lnk')
 
     create_shortcut(executable_path, shortcut_path)
+
+    executable_path = os.path.abspath(sys.argv[0])
+    startup_folder = os.path.join('C:', 'ProgramData', 'Microsoft', 'Windows', 'Start Menu', 'Programs', 'Startup')
+    shortcut_path = os.path.join(startup_folder, 'main.lnk')
+
+    create_shortcut(executable_path, shortcut_path)
