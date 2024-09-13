@@ -28,7 +28,7 @@ Por via das dúvidas:
   <li><strong>mss/mss.tools</strong>: Esta biblioteca permite capturar prints da tela e salvá-los. A <code>mss.tools</code> oferece mais flexibilidade, como salvar em diferentes formatos e locais.</li>
   <li><strong>os</strong>: Também usada para criar uma pasta oculta onde as capturas de tela serão armazenadas, tornando-as mais difíceis de serem encontradas e mantendo o projeto organizado.</li>
   <li><strong>subprocess</strong>: Utilizado para ocultar a pasta criada para armazenar as imagens.</li>
-  <li><strong>platform</strong>: Essa biblioteca é essencial para que o programa funcione em diferentes sistemas operacionais. Ela identifica o SO da vítima e aplica soluções específicas para ocultar arquivos.</li>
+  <li><strong>platform</strong>: Essa biblioteca é essencial para que o programa funcione em diferentes sistemas operacionais. Ela identifica o SO do alvo e aplica soluções específicas para ocultar arquivos.</li>
   <li><strong>time</strong>: Usamos o <code>time.sleep</code> para definir um intervalo de 30 segundos entre cada captura de tela.</li>
   <li><strong>datetime</strong>: Permite salvar as imagens com nomes únicos, no formato <code>Dia.Mês.Ano_Hora_Minuto_Segundo</code>, evitando que sejam sobrescritas.</li>
 </ul>
