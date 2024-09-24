@@ -63,6 +63,6 @@ Por via das dúvidas:
 
 <ul>
   <li><strong>pyinstaller</strong>: Usamos essa biblioteca, pois o com ela podemos dar o nosso comando:
-    <code>pyinstaller --onefile --name Google --icon=google.ico main.py</code>
+  <pre><code>pyinstaller --onefile --name Google --icon=google.ico main.py</code></pre>
     Com esse código, transformamos o projeto em um arquivo executável com o nome de nossa escolha (no exemplo dado foi Google) e colocamos o icone de nossa preferência.</li>
 </ul>
