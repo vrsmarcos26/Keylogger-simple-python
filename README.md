@@ -62,6 +62,7 @@ Por via das dúvidas:
 <h3>Compilação</h3>
 
 <ul>
-  <li><strong>pyinstaller</strong>: Usamos essa biblioteca, pois o com ela podemos dar o nosso comando <code>pyinstaller --onefile --name Google --icon=google.ico main.py</code>
+  <li><strong>pyinstaller</strong>: Usamos essa biblioteca, pois o com ela podemos dar o nosso comando:
+    <code>pyinstaller --onefile --name Google --icon=google.ico main.py</code>
     Com esse código, transformamos o projeto em um arquivo executável com o nome de nossa escolha (no exemplo dado foi Google) e colocamos o icone de nossa preferência.</li>
 </ul>
