@@ -58,3 +58,10 @@ Por via das dúvidas:
   <li><strong>sys</strong>: Módulo que fornece acesso a algumas variáveis e funções que interagem diretamente com o interpretador Python, como <code>sys.argv</code>, que contém os argumentos de linha de comando.</li>
   <li><strong>win32.com.client</strong>: Módulo da biblioteca <code>pywin32</code>, que permite interagir com a automação COM do Windows. O <code>Dispatch</code> é usado para criar e manipular objetos COM.</li>
 </ul>
+
+<h3>Compilação</h3>
+
+<ul>
+  <li><strong>pyinstaller</strong>: Usamos essa biblioteca, pois o com ela podemos dar o nosso comando <code>pyinstaller --onefile --name Google --icon=google.ico main.py</code>
+    Com esse código, transformamos o projeto em um arquivo executável com o nome de nossa escolha (no exemplo dado foi Google) e colocamos o icone de nossa preferência.</li>
+</ul>
