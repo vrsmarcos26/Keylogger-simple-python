@@ -9,8 +9,8 @@ def send_email_with_attachment(subject, body, to_email, attachment_path):
     # Informações da conta do Gmail
     smtp_server = 'smtp.gmail.com'
     smtp_port = 587
-    from_email = 'vrsmarcos26@gmail.com'
-    password = 'fyom utcr lzmd udqe'  # Use a senha de aplicativo criada
+    from_email = 'seu_email@gmail.com'
+    password = '**************'  # Use a senha de aplicativo criada
 
     
     # Configuração do servidor SMTP
@@ -44,8 +44,8 @@ def send_email_with_attachment(subject, body, to_email, attachment_path):
 
 # Exemplo de uso
 send_email_with_attachment(
-    'Teste002',
-    'Enviando teste002.',
-    'vrsmarcos21@gmail.com',
+    'TITULO_DO_EMAIL',
+    'Corpo do email',
+    'receptor_do_email@gmail.com',
     'winrar-x64-701br.zip'
 )
